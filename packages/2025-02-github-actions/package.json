@@ -1,0 +1,13 @@
+{
+  "name": "2025-02-github-actions",
+  "version": "1.0.0",
+  "packageManager": "pnpm@10.26.2",
+  "author": "tim",
+  "license": "ISC",
+  "keywords": [],
+  "scripts": {
+    "dev": "slidev",
+    "build": "slidev build",
+    "export": "slidev export"
+  }
+}

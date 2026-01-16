@@ -1,0 +1,32 @@
+{
+  "name": "slides",
+  "type": "module",
+  "private": true,
+  "packageManager": "pnpm@10.26.2",
+  "scripts": {
+    "dev": "tsx scripts/dev.ts",
+    "build": "rimraf --glob dist && pnpm -r --filter=./packages/* run build",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@slidev/cli": "catalog:",
+    "@slidev/theme-default": "catalog:",
+    "@slidev/types": "catalog:",
+    "vue": "catalog:"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "catalog:",
+    "@iconify-json/carbon": "catalog:",
+    "@iconify-json/heroicons": "catalog:",
+    "@types/fs-extra": "catalog:",
+    "@types/node": "catalog:",
+    "@types/prompts": "catalog:",
+    "eslint": "catalog:",
+    "eslint-plugin-format": "catalog:",
+    "execa": "catalog:",
+    "fs-extra": "catalog:",
+    "prompts": "catalog:",
+    "tsx": "catalog:",
+    "typescript": "catalog:"
+  }
+}

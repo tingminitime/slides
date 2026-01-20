@@ -18,14 +18,17 @@
     "@antfu/eslint-config": "catalog:",
     "@iconify-json/carbon": "catalog:",
     "@iconify-json/heroicons": "catalog:",
+    "@slidev/client": "catalog:",
     "@types/fs-extra": "catalog:",
     "@types/node": "catalog:",
     "@types/prompts": "catalog:",
+    "@types/seedrandom": "catalog:",
     "eslint": "catalog:",
     "eslint-plugin-format": "catalog:",
     "execa": "catalog:",
     "fs-extra": "catalog:",
     "prompts": "catalog:",
+    "seedrandom": "catalog:",
     "tsx": "catalog:",
     "typescript": "catalog:"
   }

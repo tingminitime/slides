@@ -1,0 +1,41 @@
+/* Source: https://github.com/antfu/talks/blob/main/2024-12-28/src/style.css */
+/*
+  2026/02/05: Custom style.css must use !important to overwrite default style
+  issue: https://github.com/slidevjs/slidev/issues/2439
+*/
+/* Transitions */
+.slidev-vclick-target {
+  transition:
+    opacity 500ms ease,
+    filter 200ms ease,
+    color 300ms ease !important;
+}
+
+.slidev-vclick-hidden:not(:has(svg)):not(.rough-annotation) {
+  opacity: 0; !important
+  pointer-events: none !important;
+  filter: blur(3px) !important;
+}
+
+.fade-out-leave-active {
+  transition:
+    opacity calc(var(--slidev-transition-duration) * 0.6) ease-out,
+    filter 200ms ease !important;
+}
+
+.fade-out-enter-active {
+  transition:
+    opacity calc(var(--slidev-transition-duration) * 0.8) ease-in,
+    filter 200ms ease !important;
+  transition-delay: calc(var(--slidev-transition-duration) * 0.6) !important;
+}
+
+.fade-out-enter-from,
+.fade-out-leave-to {
+  opacity: 0;
+  filter: blur(5px) !important;
+}
+
+.slidev-code .line {
+  transition: opacity 200ms ease !important;
+}

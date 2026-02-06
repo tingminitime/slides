@@ -100,27 +100,44 @@ transition: slide-left
 <h2
   transition duration-400
   class="text-center font-bold tracking-wide"
-  :class="$clicks > 0 ? '-translate-y-8' : 'translate-y-0'"
+  :class="$clicks > 0 ? '-translate-y-12' : '-translate-y-4'"
 >
   為什麼我們會<span text-yellow>需要</span> GitHub Actions ?
 </h2>
 
 <div
-  v-click
+  v-motion
+  v-click="[1]"
+  :initial="{ x: '-50%', y: -30 }"
+  :enter="{ x: '-50%', y: -30, transition: { duration: 400 } }"
+  :click-1="{x: '-50%', y: -10 }"
+  :leave="{ x: '-50%', y: -30 }"
+  class="text-center font-semibold text-xl tracking-widest absolute left-1/2"
 >
-  測試
+  <span v-mark.green.op50.delay300="{strokeWidth: 3, roughness: 2}">測試</span>
 </div>
 
 <div
-  v-click
+  v-motion
+  v-click="[2]"
+  :initial="{ x: '-50%', y: -30 }"
+  :enter="{ x: '-50%', y: -30, transition: { duration: 400 } }"
+  :click-2="{ x: '-50%', y: -10 }"
+  :leave="{ x: '-50%', y: -30 }"
+  class="text-center font-semibold text-xl tracking-widest absolute left-1/2"
 >
-  手動部署 vs. 自動部署
+  <span v-mark.gray.op50.delay300="{at: 2, strokeWidth: 3, roughness: 2}">手動部署</span> vs. <span v-mark.cyan.op50.delay600="{at: 2, strokeWidth: 3, roughness: 2}">自動部署</span>
 </div>
 
 <div
-  v-click
+  v-motion
+  v-click="3"
+  :initial="{ x: '-50%', y: -30 }"
+  :enter="{ x: '-50%', y: -30, transition: { duration: 400 } }"
+  :click-3="{ x: '-50%', y: -10 }"
+  class="text-center font-semibold text-xl tracking-widest absolute left-1/2"
 >
-  團隊協作
+  <span v-mark.orange.op50.delay300="{at: 3, strokeWidth: 3, roughness: 2}">團隊協作</span>
 </div>
 
 <!--
@@ -128,11 +145,15 @@ transition: slide-left
 
 (詢問大家)
 
-[click] **測試**：想像一下，如果我們為了趕時間，或是忘記先測試就直接把程式碼合併到主分支，如果這個程式異動是有問題的，那很有可能直接炸掉正式環境，這時候要被異動的可能就是你了 (開玩笑)。
+[click] **測試**：<br>
+想像一下，如果我們為了趕時間，或是忘記先測試就直接把程式碼合併到主分支，如果這個程式異動是有問題的，那很有可能直接炸掉正式環境，這時候要被異動的可能就是你了 (開玩笑)。
 
-[click] **手動部署和自動部署的效率**：在沒有自動化的幫助下，如果我們要把程式部署在遠端環境下，我們可能要想辦法進到遠端主機，然後 git clone 程式碼，然後打一堆指令建置和部署，這一次還好，如果每次更新程式都要這樣做是非常沒有效率的。
+[click] **手動部署和自動部署的效率差異**：<br>
+在沒有自動化的幫助下，如果我們要把程式部署在遠端環境下，我們可能要想辦法進入遠端主機，然後 git clone 程式碼，然後再打一連串的指令進行建置和部署，這個流程做一次還好，但如果是每次更新程式都要這樣做的話，是非常沒有效率的。<br>
+所以我們需要把這些繁雜的流程，"一次"寫到一個劇本中，然後在正確的時機下，讓 actions 自動幫我們完成這些工作，節省我們的時間和力氣。
 
-[click] **團隊協作方面**：有些人可能有這樣的經驗像是 - 「你的電腦能跑嗎 ?」、「在我這邊可以跑啊，你那邊不行嗎 ?」，所以在一個專案中尤其是多人協作的專案，更需要像是 GitHub Actions 這樣的工具在團隊建立一套標準，大家都照著同樣的規矩來提交程式，維持專案的穩定又可以降低發生問題的機率，也是在團隊中，對開發和維運建立信心的其中一環。
+[click] **團隊協作方面**：<br>
+有些人可能有這樣的經驗像是 - 「你的電腦能跑嗎 ?」、「在我這邊可以跑啊，你那邊不行嗎 ?」，所以在一個專案中尤其是多人協作的專案，更需要像是 GitHub Actions 這樣的工具在團隊建立一套標準，大家都照著同樣的規矩來提交程式，維持專案的穩定又可以降低發生問題的機率，也是在團隊中，對開發和維運建立信心的其中一環。
 -->
 
 ---
@@ -140,11 +161,44 @@ layout: center
 transition: slide-left
 ---
 
-<div>
-  <h2 text-center font-bold>GitHub Actions 的<span text-red>核心</span>概念</h2>
+<h2
+  transition duration-400
+  :class="[
+    $clicks === 1 ? '-translate-y-8' : 'translate-y-0',
+    $clicks > 1 ? '-translate-x-110 -translate-y-52' : '-translate-x-1/2'
+  ]"
+  class="text-center font-bold tracking-wide absolute left-1/2 -translate-x-1/2 -translate-y-1/2"
+>
+  GitHub Actions 的<span text-red>核心</span>概念
+</h2>
+
+<div
+  v-click
+  class="forward:delay-300"
+>
+  <span class="text-xl font-semibold tracking-wide">
+    當
+    <span class="inline-block text-yellow"> 某件事 </span>
+    發生時，自動執行
+    <span class="inline-block text-yellow"> 一連串動作</span>。
+  </span>
+</div>
+
+<div
+  v-motion
+  v-click="1"
+  class="absolute left-1/2 -translate-x-1/2"
+>
+  <span class="i-heroicons:arrow-up-16-solid text-xl font-bold text-red">arrow-up</span>
 </div>
 
 <!--
+剛剛有提到，在正確的"時機"下，讓 actions 自動完成工作，
+
+[click] 這個"時機"
+
+[click] 和"一連串動作"就是 GitHub Actions 的核心概念
+
 Event：開演的鈴聲
 Workflow：整個劇本
 Job：不同場景

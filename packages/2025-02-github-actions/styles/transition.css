@@ -5,15 +5,14 @@
 */
 /* Transitions */
 .slidev-vclick-target {
-  transition:
-    opacity 500ms ease,
-    filter 200ms ease,
-    color 300ms ease !important;
+  transition-property: opacity, filter, color !important;
+  transition-duration: 400ms, 200ms, 300ms !important;
+  transition-timing-function: ease, ease, ease !important;
 }
 
 .slidev-vclick-hidden:not(:has(svg)):not(.rough-annotation) {
-  opacity: 0; !important
-  pointer-events: none !important;
+  opacity: 0;
+  pointer-events: none;
   filter: blur(3px) !important;
 }
 

@@ -5,7 +5,9 @@
   "packageManager": "pnpm@10.26.2",
   "scripts": {
     "dev": "tsx scripts/dev.ts",
-    "build": "rimraf --glob dist && pnpm -r --filter=./packages/* run build",
+    "cleanup:dist": "rimraf --glob dist",
+    "packages:build": "pnpm cleanup:dist && pnpm -r --filter=./packages/* run build",
+    "packages:build-base": "pnpm cleanup:dist && pnpm -r --filter=./packages/* run build-base",
     "lint": "eslint ."
   },
   "dependencies": {
@@ -28,6 +30,7 @@
     "execa": "catalog:",
     "fs-extra": "catalog:",
     "prompts": "catalog:",
+    "rimraf": "catalog:",
     "seedrandom": "catalog:",
     "tsx": "catalog:",
     "typescript": "catalog:"

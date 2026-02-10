@@ -19,6 +19,7 @@ catalog:
   execa: ^9.6.1
   fs-extra: ^11.3.3
   prompts: ^2.4.2
+  rimraf: ^6.1.2
   seedrandom: ^3.0.5
   tsx: ^4.21.0
   typescript: ^5.9.3

@@ -1,5 +1,5 @@
 {
-  "name": "2025-02-github-actions",
+  "name": "2025-02-12-github-actions",
   "version": "1.0.0",
   "packageManager": "pnpm@10.26.2",
   "author": "tim",
@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "slidev",
     "build": "slidev build",
+    "build-base": "slidev build --out ../../dist/2025-02-12-github-actions --base /2025-02-12-github-actions/",
     "export": "slidev export"
   }
 }

@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "slidev",
     "build": "slidev build",
-    "build-base": "slidev build --out ../../dist/2025-02-12-github-actions --base /2025-02-12-github-actions/",
+    "build-base": "slidev build --out ../../dist/2025-02-12-github-actions --base /slides/2025-02-12-github-actions/",
     "export": "slidev export"
   }
 }

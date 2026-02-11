@@ -1,0 +1,162 @@
+:root {
+  --slidev-code-padding: 8px 10px;
+  --slidev-code-background: #16161685 !important;
+}
+
+.slidev-code {
+  backdrop-filter: blur(10px);
+  border: 1px solid #66666675;
+}
+
+/* Set the container to a horizontal flex layout */
+.horizontal-runner .slidev-monaco-container {
+  display: flex;
+  flex-direction: row;
+  margin: 0 !important;
+  height: auto;
+}
+
+.slidev-monaco-container {
+  input {
+    padding: 0.25rem 0.5rem;
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    color: #374151;
+
+    &:focus {
+      outline: 2px solid #3b82f6;
+      border-color: #3b82f6;
+    }
+
+    &:hover {
+      border-color: #9ca3af;
+    }
+  }
+
+  button {
+    padding: 0.25rem 0.5rem;
+    background-color: #f3f4f6;
+    border: 1px solid #d1d5db;
+    color: #374151;
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+      background-color: #e5e7eb;
+      border-color: #9ca3af;
+    }
+
+    &:focus {
+      outline: 2px solid #3b82f6;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &:active {
+      background-color: #d1d5db;
+    }
+
+    &:disabled {
+      background-color: #f9fafb;
+      border-color: #e5e7eb;
+      color: #9ca3af;
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+
+    &:disabled:hover {
+      background-color: #f9fafb;
+      border-color: #e5e7eb;
+    }
+  }
+
+  textarea {
+    padding: 0.5rem;
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    color: #374151;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: 1.5;
+    resize: both;
+    max-width: 100%;
+
+    &:focus {
+      outline: 2px solid #3b82f6;
+      border-color: #3b82f6;
+    }
+  }
+
+  select {
+    margin: 0.25rem 0;;
+    padding: 0.25rem 0.5rem;
+    background-color: #ffffff;
+    color: #333;
+    cursor: pointer;
+
+    &:focus {
+      outline: 2px solid #3b82f6;
+    }
+  }
+
+  option {
+    padding: 0.25rem;
+    background-color: #ffffff;
+    color: #333;
+  }
+}
+
+.horizontal-runner.full-height .slidev-monaco-container {
+  height: calc(100dvh - 30rem) !important;
+}
+
+/* Style the code editor to take the left 50% */
+.horizontal-runner .slidev-monaco-container-inner {
+  width: 50%;
+}
+
+.horizontal-runner.full-height .slidev-monaco-container-inner {
+  height: 100% !important;
+}
+
+.horizontal-runner .slidev-monaco-container .relative.flex.flex-col.rounded-b.border-t.border-main {
+  overflow-y: auto;
+  width: 50%;
+}
+
+.horizontal-runner .slidev-monaco-container .slidev-runner-output {
+  font-size: inherit;
+  line-height: 1.25;
+}
+
+.computed-code .slidev-runner-output p {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.computed-code .slidev-runner-output p:last-child {
+  margin: 0;
+  margin-bottom: 0;
+}
+
+.watch-code .slidev-runner-output p {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.watch-code .slidev-runner-output p:last-child {
+  margin: 0;
+  margin-bottom: 0;
+}
+
+.for-code .slidev-runner-output p {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.for-code .slidev-runner-output p:last-child {
+  margin: 0;
+  margin-bottom: 0;
+}

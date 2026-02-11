@@ -8,6 +8,7 @@
     "cleanup:dist": "rimraf --glob dist",
     "packages:build": "pnpm cleanup:dist && pnpm -r --filter='./packages/*' run build",
     "packages:build-base": "pnpm cleanup:dist && pnpm -r --filter='./packages/*' run build-base",
+    "generate-index": "tsx scripts/generate-index.ts",
     "lint": "eslint ."
   },
   "dependencies": {

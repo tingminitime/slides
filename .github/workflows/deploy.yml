@@ -42,6 +42,9 @@ jobs:
       - name: Build
         run: pnpm run packages:build-base
 
+      - name: Generate index page
+        run: pnpm run generate-index
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:

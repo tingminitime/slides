@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Slidev 簡報合集 - 由 Slidev 驅動的技術簡報">
+  <meta property="og:title" content="Slidev 簡報">
+  <meta property="og:description" content="由 Slidev 驅動的技術簡報合集">
+  <meta property="og:type" content="website">
+  <title>Slidev 簡報</title>
+  <style>
+    :root {
+      --color-bg: #ffffff;
+      --color-text: #1a1a1a;
+      --color-text-secondary: #666666;
+      --color-border: #e5e5e5;
+      --color-card-bg: #ffffff;
+      --color-card-hover: #f9f9f9;
+      --color-accent: #10b981;
+      --color-accent-hover: #059669;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-bg: #0a0a0a;
+        --color-text: #e5e5e5;
+        --color-text-secondary: #a3a3a3;
+        --color-border: #262626;
+        --color-card-bg: #141414;
+        --color-card-hover: #1a1a1a;
+        --color-accent: #10b981;
+        --color-accent-hover: #34d399;
+      }
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .container {
+      max-width: 56rem;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.025em;
+    }
+
+    .subtitle {
+      font-size: 1.125rem;
+      color: var(--color-text-secondary);
+      font-weight: 400;
+    }
+
+    .presentations {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .card {
+      display: block;
+      background-color: var(--color-card-bg);
+      border: 1px solid var(--color-border);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s ease;
+    }
+
+    .card:hover {
+      background-color: var(--color-card-hover);
+      border-color: var(--color-accent);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .card:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      flex: 1;
+    }
+
+    .card-date {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      font-weight: 400;
+      white-space: nowrap;
+    }
+
+    .card-description {
+      color: var(--color-text-secondary);
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .card-link {
+      color: var(--color-accent);
+      font-weight: 500;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+
+    .card:hover .card-link {
+      color: var(--color-accent-hover);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--color-border);
+      color: var(--color-text-secondary);
+      font-size: 0.875rem;
+    }
+
+    footer a {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: var(--color-text-secondary);
+    }
+
+    .empty-state h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--color-text);
+    }
+
+    @media (max-width: 640px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .card-title {
+        font-size: 1.25rem;
+      }
+
+      .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Slidev 簡報</h1>
+      <p class="subtitle">由 Slidev 驅動的技術簡報合集</p>
+    </header>
+
+    <main>
+      <div class="presentations">
+        {{PRESENTATIONS_CARDS}}
+      </div>
+    </main>
+
+    <footer>
+      <p>使用 <a href="https://sli.dev" target="_blank" rel="noopener noreferrer">Slidev</a> 構建</p>
+    </footer>
+  </div>
+</body>
+</html>

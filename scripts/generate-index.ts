@@ -44,7 +44,7 @@ function extractFrontmatter(content: string): Record<string, any> {
 
 /**
  * Format directory name to human-readable title
- * Example: "2025-02-12-github-actions" → "GitHub Actions"
+ * Example: "2026-02-12-github-actions" → "GitHub Actions"
  */
 function formatDirectoryName(dirName: string): string {
   // Remove date prefix (YYYY-MM-DD-)
@@ -59,7 +59,7 @@ function formatDirectoryName(dirName: string): string {
 
 /**
  * Extract date from directory name
- * Example: "2025-02-12-github-actions" → "2025-02-12"
+ * Example: "2026-02-12-github-actions" → "2026-02-12"
  */
 function extractDateFromDirName(dirName: string): string | undefined {
   const dateMatch = dirName.match(/^(\d{4}-\d{2}-\d{2})/)
@@ -148,10 +148,10 @@ function generatePresentationCards(presentations: PresentationMetadata[]): strin
     const url = `${baseUrl}/${p.name}/`
     const displayDate = p.date
       ? new Date(p.date).toLocaleDateString('zh-TW', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-      })
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        })
       : ''
 
     return `<a href="${url}" class="card">

@@ -14,18 +14,24 @@
   "dependencies": {
     "@slidev/cli": "catalog:",
     "@slidev/theme-default": "catalog:",
+    "@slidev/theme-seriph": "catalog:",
     "@slidev/types": "catalog:",
-    "vue": "catalog:"
+    "monaco-editor": "catalog:",
+    "vue": "catalog:",
+    "vue-tsc": "catalog:"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:",
     "@iconify-json/carbon": "catalog:",
     "@iconify-json/heroicons": "catalog:",
+    "@iconify-json/material-icon-theme": "catalog:",
+    "@iconify-json/material-symbols": "catalog:",
     "@slidev/client": "catalog:",
     "@types/fs-extra": "catalog:",
     "@types/node": "catalog:",
     "@types/prompts": "catalog:",
     "@types/seedrandom": "catalog:",
+    "@vue/compiler-sfc": "catalog:",
     "eslint": "catalog:",
     "eslint-plugin-format": "catalog:",
     "execa": "catalog:",

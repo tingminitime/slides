@@ -125,8 +125,15 @@ transition: slide-left
 </div>
 
 <div
+  v-click="[1]"
+  class="absolute right-16 bottom-4 rounded overflow-hidden"
+>
+  <img src="./assets/no-test.png" alt="no test" class="w-[260px]">
+</div>
+
+<div
   v-motion
-  v-click="[2]"
+  v-click="[2, 4]"
   :initial="{ x: '-50%', y: -40 }"
   :enter="{ x: '-50%', y: -40, transition: { duration: 400 } }"
   :click-2="{ x: '-50%', y: -20 }"
@@ -137,14 +144,21 @@ transition: slide-left
 </div>
 
 <div
+  v-click="[3]"
+  class="absolute right-16 bottom-6 rounded overflow-hidden"
+>
+  <img src="./assets/watch-logs-to-be-free.gif" alt="no test" class="w-[320px]">
+</div>
+
+<div
   v-motion
-  v-click="3"
+  v-click="4"
   :initial="{ x: '-50%', y: -40 }"
   :enter="{ x: '-50%', y: -40, transition: { duration: 400 } }"
   :click-3="{ x: '-50%', y: -20 }"
   class="text-center font-semibold text-xl tracking-widest absolute left-1/2"
 >
-  <span v-mark.orange.op50.delay300="{at: 3, strokeWidth: 3, roughness: 2}">團隊協作</span>
+  <span v-mark.orange.op50.delay300="{at: 4, strokeWidth: 3, roughness: 2}">團隊協作</span>
 </div>
 
 <!--
@@ -157,7 +171,7 @@ transition: slide-left
 
 [click] **手動部署和自動部署的效率差異**：<br>
 在沒有自動化的幫助下，如果我們要把程式部署在遠端環境下，我們可能要想辦法進入遠端主機，然後 git clone 程式碼，接著再打一連串的指令進行環境建置和部署，這個流程做一次還好，但如果是每次更新程式都要這樣做的話，是非常沒有效率的。<br>
-所以我們需要把這些繁雜的流程，"一次"寫到一個劇本中，然後在正確的時機下，讓 actions 自動幫我們完成這些工作，節省我們的時間和力氣。
+[click] 所以我們需要把這些繁雜的流程，"一次"寫到一個劇本中，然後在正確的時機下，讓 actions 自動幫我們完成這些工作，節省我們的時間和力氣，接下來我們就可以裝忙了(笑)。
 
 [click] **團隊協作方面**：<br>
 有些人可能有這樣的經驗像是 - 「你的電腦能跑嗎 ?」、「在我這邊可以跑啊，你那邊不行嗎 ?」，所以在一個專案中尤其是多人協作的專案，更需要像是 actions 這樣的工具在團隊建立一套標準，大家都照著同樣的規矩來提交程式，程式也會在相同的環境下進行構建測試，這樣既可以維持專案的穩定，又可以降低發生問題的機率，也是在團隊中，對開發和維運建立信心的其中一環。
@@ -298,9 +312,13 @@ glow: full
 layout: center
 ---
 
-<h2 class="text-center font-bold tracking-wide">
+<h2 class="text-center font-bold tracking-wide sr-only">
   實作環節
 </h2>
+
+<div>
+  <img src="./assets/live-demo-time.gif" alt="實作環節" class="w-[500px] mx-auto">
+</div>
 
 <!--
 進入實作環節，讓我們體驗一下 GitHub Actions 是怎麼運作的。

@@ -35,6 +35,7 @@ export default antfu(
       'vue/no-multiple-template-root': 'off',
       'vue/no-unused-vars': 'warn',
       'vue/max-attributes-per-line': 'error',
+      'vue/custom-event-name-casing': 'kebab-case',
       'vue/html-self-closing': ['error', {
         html: {
           void: 'never',
